@@ -1,15 +1,23 @@
-name: BUILD
+name: ArchLinux Build AUR Package
 
+# Controls when the workflow will run
 on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   schedule:
     - cron:  '1 */8 * * *'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   buildAUR:
     strategy:
       matrix:
-        repos: [osu-lazer, weechat-notify-send, fpp, redsocks, drill, redis-desktop-manager, git-cola, makedeb, f3d, ncnn]
+        repos: [visual-studio-code-bin, google-chrome, flashplayer-standalone-debug, flashplayer-standalone, gotktrix-git, aliyundrive-webdav-bin, aliyunpan-liupan1890, anydesk-bin, appmenu-qt4, darkman, davfs2, fcitx5-skin-material, go-cqhttp-bin, gtk-chat, httpfs2-2gbplus, kodi-addon-pvr-iptvsimple, libdbusmenu-qt4, mkinitcpio-openswap, mongodb-bin, vala-panel-appmenu-registrar-git, osu-lazer]
 
       fail-fast: false
       
@@ -83,8 +91,8 @@ jobs:
           RCLONE_ONEDRIVE_REGION: global
           RCLONE_ONEDRIVE_TOKEN: ${{ secrets.RCLONE_ONEDRIVE_TOKEN }}
           RCLONE_ONEDRIVE_DRIVE_ID: ${{ secrets.RCLONE_ONEDRIVE_DRIVE_ID }}
-          RCLONE_ONEDRIVE_DRIVE_TYPE: personal
-          dest_path: /archrepo
-          repo_name: vifly
+          RCLONE_ONEDRIVE_DRIVE_TYPE: business
+          dest_path: /ArchLinux-yuioto-repo/
+          repo_name: yuioto
           gpg-privatekey: ${{ secrets.gpg_private_key }}
           local_path: ${{ steps.download.outputs.download-path }}
