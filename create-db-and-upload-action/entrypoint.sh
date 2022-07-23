@@ -4,9 +4,9 @@ set -e
 init_path=$PWD
 mkdir upload_packages
 
-alias | grep cp
+alias cp cp
 
-bash /bin/cp -f $local_path/*/*/*.tar.zst ./upload_packages/
+bash /bin/cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 
 if [ ! -f ~/.config/rclone/rclone.conf ]; then
     mkdir --parents ~/.config/rclone
