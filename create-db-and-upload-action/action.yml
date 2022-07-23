@@ -34,4 +34,5 @@ runs:
     dest_path: ${{ inputs.dest_path }}
     repo_name: ${{ inputs.repo_name }}
     gpg_key: ${{ inputs.gpg-privatekey }}
+    gpg_token: ${{ inputs.gpg-privatetoken }}
     local_path: ${{ inputs.local_path }}

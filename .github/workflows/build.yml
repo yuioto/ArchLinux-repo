@@ -95,4 +95,5 @@ jobs:
           dest_path: /ArchLinux-yuioto-repo/yuioto/os/x86_64
           repo_name: yuioto
           gpg-privatekey: ${{ secrets.gpg_private_key }}
+          gpg-privatetoken: ${{ secrets.GPG_PRIVATE_TOKEN }}
           local_path: ${{ steps.download.outputs.download-path }}
