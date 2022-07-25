@@ -3,7 +3,6 @@ set -e
 
 init_path=$PWD
 mkdir upload_packages
-alias cp cp
 yes | cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 
 if [ ! -f ~/.config/rclone/rclone.conf ]; then
