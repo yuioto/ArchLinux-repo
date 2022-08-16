@@ -6,6 +6,14 @@ mkdir upload_packages
 # test
 # yes | cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 
+cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
+echo use-agent >> ~/.gnupg/gpg.conf
+echo pinentry-mode loopback >> ~/.gnupg/gpg.conf
+echo allow-loopback-pinentry >> ~/.gnupg/gpg-agent.conf
+echo RELOADAGENT | gpg-connect-agent
+
+
+
 if [ ! -f ~/.config/rclone/rclone.conf ]; then
     mkdir --parents ~/.config/rclone
     echo "[onedrive]" >> ~/.config/rclone/rclone.conf
