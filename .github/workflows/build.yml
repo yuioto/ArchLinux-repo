@@ -17,7 +17,8 @@ jobs:
   buildAUR:
     strategy:
       matrix:
-        repos: [ppet, vidalia, howdy, php56, php56-cgi, dynamic-wallpaper, onedriver, visual-studio-code-bin, google-chrome, flashplayer-standalone-debug, flashplayer-standalone, gotktrix-git, aliyundrive-webdav-bin, aliyunpan-liupan1890, anydesk-bin, appmenu-qt4, darkman, davfs2, fcitx5-skin-material, go-cqhttp-bin, gtk-chat, httpfs2-2gbplus, kodi-addon-pvr-iptvsimple, mkinitcpio-openswap, mongodb-bin, vala-panel-appmenu-registrar-git, osu-lazer]
+        # repos: [opentabletdriver, go-cqhttp-bin, paru, ppet, vidalia, howdy, php56, php56-cgi, dynamic-wallpaper, onedriver, visual-studio-code-bin, google-chrome, flashplayer-standalone-debug, flashplayer-standalone, gotktrix-git, aliyundrive-webdav-bin, aliyunpan-liupan1890, anydesk-bin, appmenu-qt4, darkman, davfs2, fcitx5-skin-material, go-cqhttp-bin, gtk-chat, httpfs2-2gbplus, kodi-addon-pvr-iptvsimple, mkinitcpio-openswap, mongodb-bin, vala-panel-appmenu-registrar-git, osu-lazer]
+        repos: [go-cqhttp-bin]
 
       fail-fast: false
       

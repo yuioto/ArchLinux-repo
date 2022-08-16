@@ -7,6 +7,7 @@ mkdir upload_packages
 # yes | cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 
 # cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
+mkdir -p ~/.gnupg/
 echo use-agent >> ~/.gnupg/gpg.conf
 echo pinentry-mode loopback >> ~/.gnupg/gpg.conf
 echo allow-loopback-pinentry >> ~/.gnupg/gpg-agent.conf
