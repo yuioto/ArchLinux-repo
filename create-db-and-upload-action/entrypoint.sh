@@ -46,8 +46,9 @@ if [ ! -z "$gpg_key" ]; then
     for name in $packages
     do
         # gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
-        gpg --no-tty --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
-    done
+        # gpg --import  --pinentry-mode loopback --batch --passphrase-file password-file  private-file.key
+        gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
+        done
     repo-add --verify --sign "./${repo_name:?}.db.tar.gz" ./*.tar.zst
 fi
 rclone copy ./ "onedrive:${dest_path:?}" --copy-links
