@@ -18,6 +18,9 @@ inputs:
     required: true
   gpg-privatekey:
     description: 'Your GPG private key, used to sign repo.'
+  gpg-privatetoken:
+    required: true
+    description: 'Your GPG private key, used to sign gpgkey.'
   local_path:
     default: './'
 runs:
