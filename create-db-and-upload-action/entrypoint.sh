@@ -45,7 +45,8 @@ if [ ! -z "$gpg_key" ]; then
     packages=( "*.tar.zst" )
     for name in $packages
     do
-        gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
+        # gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
+        gpg --no-tty --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
     done
     repo-add --verify --sign "./${repo_name:?}.db.tar.gz" ./*.tar.zst
 fi
