@@ -13,6 +13,8 @@ echo pinentry-mode loopback >> ~/.gnupg/gpg.conf
 echo allow-loopback-pinentry >> ~/.gnupg/gpg-agent.conf
 echo RELOADAGENT | gpg-connect-agent
 
+find ~/.gnupg -type f -exec chmod 600 {} \; # Set 600 for files
+find ~/.gnupg -type d -exec chmod 700 {} \; # Set 700 for directories
 
 
 if [ ! -f ~/.config/rclone/rclone.conf ]; then
@@ -40,6 +42,7 @@ rm "./${repo_name:?}.db.tar.gz"
 rm "./${repo_name:?}.files.tar.gz"
 
 echo $gpg_token >> ~/.config/gpgtoken
+cat ~/.config/gpgtoken
 
 if [ ! -z "$gpg_key" ]; then
     packages=( "*.tar.zst" )
