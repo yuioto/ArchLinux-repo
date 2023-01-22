@@ -4,7 +4,7 @@ set -e
 init_path=$PWD
 mkdir upload_packages
 # test
-# yes | cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
+yes | cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 
 # cp -rf $local_path/*/*/*.tar.zst ./upload_packages/
 mkdir -p ~/.gnupg/
