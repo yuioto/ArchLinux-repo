@@ -51,9 +51,10 @@ if [ ! -z "$gpg_key" ]; then
         # gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
         # gpg --import  --pinentry-mode loopback --batch --passphrase-file password-file  private-file.key
         # gpg --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
-        gpg --import  --pinentry-mode loopback --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
+        # gpg --import  --pinentry-mode loopback --batch --passphrase-file ~/.config/gpgtoken --detach-sig --yes $name
+        gpg --detach-sig --yes $name
         done
-    repo-add --verify --sign "./${repo_name:?}.db.tar.gz" ./*.tar.zst
+        repo-add --verify --sign "./${repo_name:?}.db.tar.gz" ./*.tar.zst
 fi
 
 rclone copy ./ "onedrive:${dest_path:?}" --copy-links
